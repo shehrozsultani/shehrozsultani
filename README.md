@@ -63,6 +63,117 @@ I enjoy learning by building real projects, experimenting with new technologies,
 
 <!-- PROJECTS:START -->
 
+<table>
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🚀 <a href="https://github.com/shehrozsultani/holidays">holidays</a>
+</h3>
+
+<p>
+  Open World Holidays Framework
+</p>
+
+<p>
+  
+  &nbsp;
+  <a href="https://github.com/shehrozsultani/holidays"><strong>View Project →</strong></a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  🚀 <a href="https://github.com/shehrozsultani/python-practice">python-practice</a>
+</h3>
+
+<p>
+  This repository is a dedicated space for Python programming practice.
+</p>
+
+<p>
+  
+  &nbsp;
+  <a href="https://github.com/shehrozsultani/python-practice"><strong>View Project →</strong></a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🚀 <a href="https://github.com/shehrozsultani/campus-copilot-ai">campus-copilot-ai</a>
+</h3>
+
+<p>
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. It combines context-aware study assistance, course module management, and task tracking into a single platform to help students streamline learning and manage academic workloads efficiently.
+</p>
+
+<p>
+  <code>⚙️ JavaScript</code>
+  &nbsp;
+  <a href="https://github.com/shehrozsultani/campus-copilot-ai"><strong>View Project →</strong></a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  🚀 <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">ai-tic-tac-toe</a>
+</h3>
+
+<p>
+  Software project by Shehroz Sultani.
+</p>
+
+<p>
+  <code>⚙️ Python</code>
+  &nbsp;
+  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe"><strong>View Project →</strong></a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🚀 <a href="https://github.com/shehrozsultani/cpp-learning">cpp-learning</a>
+</h3>
+
+<p>
+  My C++ learning journey with practice programs and projects
+</p>
+
+<p>
+  
+  &nbsp;
+  <a href="https://github.com/shehrozsultani/cpp-learning"><strong>View Project →</strong></a>
+</p>
+
+</td>
+
+<td width="50%" valign="top"></td>
+</tr>
+
+</table>
+
 <!-- PROJECTS:END -->
 
 <br>
