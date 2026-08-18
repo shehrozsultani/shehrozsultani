@@ -19,21 +19,203 @@ jobs:
       - name: Update Projects section
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python <<'PY'
+          import base64
           import json
           import os
+          import re
+          import urllib.error
           import urllib.request
 
           username = "shehrozsultani"
           readme = "README.md"
 
-          headers = {
+          github_headers = {
               "Accept": "application/vnd.github+json",
               "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
               "X-GitHub-Api-Version": "2022-11-28",
               "User-Agent": "github-profile-updater"
           }
+
+          gemini_api_key = os.environ.get("GEMINI_API_KEY")
+
+          def github_get(url):
+              request = urllib.request.Request(
+                  url,
+                  headers=github_headers
+              )
+
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)
+
+          def get_readme(repo_name):
+              """
+              Retrieve and decode a repository README.
+
+              Returns an empty string if the README is missing,
+              empty, invalid, or cannot be retrieved.
+              """
+              url = (
+                  f"https://api.github.com/repos/"
+                  f"{username}/{repo_name}/readme"
+              )
+
+              try:
+                  data = github_get(url)
+
+                  content = data.get("content", "")
+                  encoding = data.get("encoding", "")
+
+                  if not content:
+                      return ""
+
+                  if encoding == "base64":
+                      decoded = base64.b64decode(
+                          content.replace("\n", "")
+                      ).decode("utf-8", errors="replace")
+                  else:
+                      decoded = content
+
+                  return decoded.strip()
+
+              except Exception as error:
+                  print(
+                      f"README unavailable for {repo_name}; "
+                      f"using fallback description."
+                  )
+                  return ""
+
+          def generate_ai_description(repo_name, readme_content):
+              """
+              Generate a concise portfolio description using Gemini.
+
+              Returns None if Gemini cannot generate a usable result.
+              """
+              if not gemini_api_key or not readme_content:
+                  return None
+
+              # Prevent unnecessarily large prompts.
+              max_readme_chars = 12000
+              readme_excerpt = readme_content[:max_readme_chars]
+
+              prompt = f"""
+          You are writing a short professional description for a GitHub portfolio.
+
+          Repository name:
+          {repo_name}
+
+          Repository README:
+          ---BEGIN README---
+          {readme_excerpt}
+          ---END README---
+
+          Task:
+          Based ONLY on the information contained in the README, write one
+          concise description of what this project actually does.
+
+          Rules:
+          - 10 to 20 words when reasonably possible.
+          - Be factual and professional.
+          - Do not invent features.
+          - Do not mention AI or Gemini.
+          - Do not use emojis.
+          - Do not use Markdown.
+          - Do not use quotation marks.
+          - Return ONLY the description.
+          """
+
+              payload = {
+                  "contents": [
+                      {
+                          "parts": [
+                              {
+                                  "text": prompt
+                              }
+                          ]
+                      }
+                  ]
+              }
+
+              url = (
+                  "https://generativelanguage.googleapis.com/"
+                  "v1beta/models/gemini-3.6-flash:generateContent"
+              )
+
+              request = urllib.request.Request(
+                  url,
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={
+                      "Content-Type": "application/json",
+                      "x-goog-api-key": gemini_api_key
+                  },
+                  method="POST"
+              )
+
+              try:
+                  with urllib.request.urlopen(
+                      request,
+                      timeout=60
+                  ) as response:
+                      result = json.load(response)
+
+                  candidates = result.get("candidates", [])
+
+                  if not candidates:
+                      return None
+
+                  parts = (
+                      candidates[0]
+                      .get("content", {})
+                      .get("parts", [])
+                  )
+
+                  generated_text = "".join(
+                      part.get("text", "")
+                      for part in parts
+                  ).strip()
+
+                  if not generated_text:
+                      return None
+
+                  # Clean accidental formatting even if Gemini ignores
+                  # the output rules.
+                  generated_text = generated_text.replace(
+                      "\n",
+                      " "
+                  ).strip()
+
+                  generated_text = generated_text.strip(
+                      "\"'`"
+                  )
+
+                  generated_text = re.sub(
+                      r"\s+",
+                      " ",
+                      generated_text
+                  ).strip()
+
+                  # Prevent the generated text from becoming huge.
+                  if len(generated_text) > 250:
+                      generated_text = (
+                          generated_text[:250]
+                          .rsplit(" ", 1)[0]
+                          + "..."
+                      )
+
+                  return generated_text
+
+              except Exception:
+                  print(
+                      f"Gemini description generation failed for "
+                      f"{repo_name}; using fallback."
+                  )
+                  return None
+
+          # ---------------------------------------------------------
+          # 1. Retrieve repositories
+          # ---------------------------------------------------------
 
           repos = []
           page = 1
@@ -41,13 +223,16 @@ jobs:
           while True:
               url = (
                   f"https://api.github.com/users/{username}/repos"
-                  f"?type=owner&sort=updated&direction=desc&per_page=100&page={page}"
+                  f"?type=owner&sort=updated&direction=desc"
+                  f"&per_page=100&page={page}"
               )
 
-              request = urllib.request.Request(url, headers=headers)
-
-              with urllib.request.urlopen(request) as response:
-                  data = json.load(response)
+              try:
+                  data = github_get(url)
+              except Exception as error:
+                  raise SystemExit(
+                      f"Failed to retrieve repositories: {error}"
+                  )
 
               if not data:
                   break
@@ -59,31 +244,78 @@ jobs:
 
               page += 1
 
+          # ---------------------------------------------------------
+          # 2. Keep only suitable repositories
+          # ---------------------------------------------------------
+
           repos = [
-              repo for repo in repos
+              repo
+              for repo in repos
               if repo["name"].lower() != username.lower()
               and not repo["archived"]
+              and not repo["private"]
           ]
+
+          # ---------------------------------------------------------
+          # 3. Generate project entries
+          # ---------------------------------------------------------
 
           projects = []
 
           for repo in repos:
               name = repo["name"]
               url = repo["html_url"]
-              description = repo["description"] or "No description provided."
-              language = repo["language"]
+              description = repo.get("description")
+              language = repo.get("language")
 
-              line = f"- **[{name}]({url})** — {description}"
+              # -----------------------------------------------------
+              # Existing GitHub description
+              # -----------------------------------------------------
+
+              if description and description.strip():
+                  final_description = description.strip()
+
+              # -----------------------------------------------------
+              # Missing GitHub description → README → Gemini
+              # -----------------------------------------------------
+
+              else:
+                  readme_content = get_readme(name)
+
+                  ai_description = generate_ai_description(
+                      name,
+                      readme_content
+                  )
+
+                  if ai_description:
+                      final_description = ai_description
+                  else:
+                      final_description = (
+                          "Software project by Shehroz Sultani."
+                      )
+
+              line = (
+                  f"- **[{name}]({url})** — "
+                  f"{final_description}"
+              )
 
               if language:
                   line += f" `[{language}]`"
 
               projects.append(line)
 
+          # ---------------------------------------------------------
+          # 4. Build generated section
+          # ---------------------------------------------------------
+
           if projects:
               generated = "\n".join(projects)
           else:
               generated = "_No public projects yet._"
+
+          # ---------------------------------------------------------
+          # 5. Read existing profile README
+          # ---------------------------------------------------------
 
           with open(readme, "r", encoding="utf-8") as f:
               content = f.read()
@@ -99,6 +331,10 @@ jobs:
                   "PROJECTS markers were not found in README.md"
               )
 
+          # ---------------------------------------------------------
+          # 6. Replace ONLY the content between the markers
+          # ---------------------------------------------------------
+
           new_content = (
               content[:start + len(start_marker)]
               + "\n"
@@ -107,8 +343,14 @@ jobs:
               + content[end:]
           )
 
+          # ---------------------------------------------------------
+          # 7. Write updated README
+          # ---------------------------------------------------------
+
           with open(readme, "w", encoding="utf-8") as f:
               f.write(new_content)
+
+          print("Profile Projects section updated successfully.")
           PY
 
       - name: Commit changes
