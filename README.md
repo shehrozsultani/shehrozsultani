@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:2563EB&height=230&section=header&text=Shehroz%20Sultani&fontSize=50&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Software%20Development%20%7C%20AI%20%7C%20Web%20Development&descAlignY=60&descSize=18" width="100%" alt="Shehroz Sultani"/>
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:2563EB&height=240&section=header&text=Shehroz%20Sultani&fontSize=52&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Software%20Development%20%7C%20AI%20%7C%20Web%20Development&descAlignY=61&descSize=18"
+    width="100%"
+    alt="Shehroz Sultani"
+  />
 </p>
 
 <p align="center">
@@ -8,10 +12,10 @@
 
 <p align="center">
   <a href="https://github.com/shehrozsultani">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/GitHub-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
   <a href="https://github.com/shehrozsultani?tab=repositories">
-    <img src="https://img.shields.io/badge/Projects-Explore-2563EB?style=flat-square&logo=github&logoColor=white" alt="Projects"/>
+    <img src="https://img.shields.io/badge/Projects-2563EB?style=for-the-badge&logo=github&logoColor=white" alt="Projects"/>
   </a>
 </p>
 
@@ -19,28 +23,32 @@
 
 ## 👋 About Me
 
-I'm **Shehroz**, a BS Information Technology student interested in building practical software and exploring modern technologies.
+I'm **Shehroz**, a BS Information Technology student passionate about building practical software, exploring AI, developing web applications, and contributing to open source.
 
-My current focus is on:
+My current interests include:
 
-- 💻 Software development and programming fundamentals
+- 💻 Software development and programming
 - 🌐 Web applications and deployment
 - 🤖 AI-powered applications and APIs
 - 🐍 Python development
 - ⚙️ GitHub automation and developer workflows
 - 🌱 Open-source development and continuous learning
 
-I enjoy learning by building real projects, experimenting with new technologies, and turning ideas into working applications.
+I enjoy learning by building real projects, experimenting with modern technologies, and turning ideas into working software.
 
 <br>
 
-## ⚡ Technologies I Work With
+## ⚡ Technologies & Tools
+
+### 💻 Languages
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
 </p>
+
+### 🌐 Web & Application Development
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
@@ -49,139 +57,72 @@ I enjoy learning by building real projects, experimenting with new technologies,
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/>
 </p>
 
+### ⚙️ Tools, Platforms & AI
+
 <p align="center">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
-  <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini"/>
+  <img src="https://img.shields.io/badge/Gemini_API-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini API"/>
 </p>
 
 <br>
 
 ## 🚀 My Projects
 
+<p align="center">
+  <sub>
+    Automatically generated from my public GitHub repositories.
+  </sub>
+</p>
+
 <!-- PROJECTS:START -->
-
-<table>
-
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>
-  🚀 <a href="https://github.com/shehrozsultani/holidays">holidays</a>
-</h3>
-
-<p>
-  Open World Holidays Framework
-</p>
-
-<p>
-  
-  &nbsp;
-  <a href="https://github.com/shehrozsultani/holidays"><strong>View Project →</strong></a>
-</p>
-
-</td>
-
-
-<td width="50%" valign="top">
-
-<h3>
-  🚀 <a href="https://github.com/shehrozsultani/python-practice">python-practice</a>
-</h3>
-
-<p>
-  This repository is a dedicated space for Python programming practice.
-</p>
-
-<p>
-  
-  &nbsp;
-  <a href="https://github.com/shehrozsultani/python-practice"><strong>View Project →</strong></a>
-</p>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>
-  🚀 <a href="https://github.com/shehrozsultani/campus-copilot-ai">campus-copilot-ai</a>
-</h3>
-
-<p>
-  CampusCopilot AI is a centralized academic workspace designed for university IT students. It combines context-aware study assistance, course module management, and task tracking into a single platform to help students streamline learning and manage academic workloads efficiently.
-</p>
-
-<p>
-  <code>⚙️ JavaScript</code>
-  &nbsp;
-  <a href="https://github.com/shehrozsultani/campus-copilot-ai"><strong>View Project →</strong></a>
-</p>
-
-</td>
-
-
-<td width="50%" valign="top">
-
-<h3>
-  🚀 <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">ai-tic-tac-toe</a>
-</h3>
-
-<p>
-  Software project by Shehroz Sultani.
-</p>
-
-<p>
-  <code>⚙️ Python</code>
-  &nbsp;
-  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe"><strong>View Project →</strong></a>
-</p>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>
-  🚀 <a href="https://github.com/shehrozsultani/cpp-learning">cpp-learning</a>
-</h3>
-
-<p>
-  My C++ learning journey with practice programs and projects
-</p>
-
-<p>
-  
-  &nbsp;
-  <a href="https://github.com/shehrozsultani/cpp-learning"><strong>View Project →</strong></a>
-</p>
-
-</td>
-
-<td width="50%" valign="top"></td>
-</tr>
-
-</table>
 
 <!-- PROJECTS:END -->
 
 <br>
 
-## 🏆 Achievements
+## 🏆 Achievements & Certifications
+
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+### 🎓 Certificate Name
+
+**Organization:** Organization Name
+
+Brief description of the certificate, course, program, or achievement.
+
+<a href="YOUR_CERTIFICATE_LINK">
+<strong>View Certificate →</strong>
+</a>
+
+</td>
+
+<td width="50%" valign="top">
+
+### 🤖 Certificate Name
+
+**Organization:** Organization Name
+
+Brief description of the certificate, course, program, or achievement.
+
+<a href="YOUR_CERTIFICATE_LINK">
+<strong>View Certificate →</strong>
+</a>
+
+</td>
+
+</tr>
+</table>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=shehrozsultani&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1" alt="GitHub Trophies"/>
+  <sub>
+    More certifications and achievements will be added over time.
+  </sub>
 </p>
 
 <br>
@@ -189,15 +130,17 @@ I enjoy learning by building real projects, experimenting with new technologies,
 ## 🌱 Currently Learning
 
 <p align="center">
-  <code>Software Engineering</code>
-  <code>Web Development</code>
-  <code>AI Development</code>
-  <code>Python</code>
-  <code>C++</code>
-  <code>Git & GitHub</code>
-  <code>REST APIs</code>
-  <code>Deployment</code>
-  <code>Open Source</code>
+  <img src="https://img.shields.io/badge/Software_Engineering-1E3A8A?style=for-the-badge" alt="Software Engineering"/>
+  <img src="https://img.shields.io/badge/Web_Development-2563EB?style=for-the-badge" alt="Web Development"/>
+  <img src="https://img.shields.io/badge/AI_Development-3B82F6?style=for-the-badge" alt="AI Development"/>
+  <img src="https://img.shields.io/badge/REST_APIs-60A5FA?style=for-the-badge" alt="REST APIs"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/Git_%26_GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="Git & GitHub"/>
+  <img src="https://img.shields.io/badge/Open_Source-2563EB?style=flat-square&logo=opensourceinitiative&logoColor=white" alt="Open Source"/>
 </p>
 
 <br>
@@ -209,7 +152,7 @@ I enjoy learning by building real projects, experimenting with new technologies,
 </p>
 
 <p align="center">
-  I'm focused on turning what I learn into practical software and continuously improving as a developer.
+  I'm focused on turning what I learn into practical software and continuously growing as a developer.
 </p>
 
 <br>
@@ -225,5 +168,5 @@ I enjoy learning by building real projects, experimenting with new technologies,
 <br>
 
 <p align="center">
-  <sub>Thanks for stopping by. ⭐</sub>
-</p> 
+  <sub>Thanks for visiting my profile. ⭐</sub>
+</p>
