@@ -27,6 +27,7 @@ jobs:
           import json
           import os
           import re
+          import urllib.parse
           import urllib.request
 
           username = "shehrozsultani"
@@ -42,7 +43,7 @@ jobs:
           gemini_api_key = os.environ.get("GEMINI_API_KEY")
 
           # ---------------------------------------------------------
-          # GitHub API helper
+          # GitHub API
           # ---------------------------------------------------------
 
           def github_get(url):
@@ -58,16 +59,10 @@ jobs:
                   return json.load(response)
 
           # ---------------------------------------------------------
-          # Retrieve repository README
+          # Get repository README
           # ---------------------------------------------------------
 
           def get_readme(repo_name):
-              """
-              Retrieve and decode a repository README.
-
-              Returns an empty string if the README cannot be retrieved.
-              """
-
               url = (
                   f"https://api.github.com/repos/"
                   f"{username}/{repo_name}/readme"
@@ -102,21 +97,14 @@ jobs:
                   return ""
 
           # ---------------------------------------------------------
-          # Generate Gemini description
+          # Gemini description generator
           # ---------------------------------------------------------
 
           def generate_ai_description(repo_name, readme_content):
-              """
-              Generate a professional project description using Gemini.
-
-              The description can be reasonably detailed.
-              It is based only on the repository README.
-              """
 
               if not gemini_api_key or not readme_content:
                   return None
 
-              # Prevent unnecessarily huge requests.
               max_readme_chars = 12000
               readme_excerpt = readme_content[:max_readme_chars]
 
@@ -132,27 +120,25 @@ jobs:
           {readme_excerpt}
           ---END README---
 
-          Task:
-          Understand what this project actually does and write a polished,
-          accurate portfolio description.
+          Write a polished description explaining what this project actually
+          does.
 
           Requirements:
-          - Base the description ONLY on the README information provided.
-          - Do not invent features, technologies, functionality, users, or
-            capabilities that are not supported by the README.
-          - Explain the project's actual purpose clearly.
+
+          - Base the description ONLY on the README.
+          - Do not invent features or functionality.
+          - Be factual and professional.
           - A reasonably detailed description is preferred.
-          - Usually use around 20–45 words when the README provides enough
+          - Around 20–45 words is ideal when the README provides enough
             information.
-          - It is acceptable to be shorter when the project is simple.
-          - Do not make the description unnecessarily long.
-          - Professional developer-portfolio tone.
+          - Shorter is acceptable for simple projects.
+          - Do not make it unnecessarily long.
           - No emojis.
           - No Markdown.
           - No bullet points.
           - No quotation marks.
-          - Do not mention Gemini, AI generation, or this prompt.
-          - Return ONLY the description text.
+          - Do not mention Gemini or AI generation.
+          - Return ONLY the description.
           """
 
               payload = {
@@ -183,10 +169,12 @@ jobs:
               )
 
               try:
+
                   with urllib.request.urlopen(
                       request,
                       timeout=60
                   ) as response:
+
                       result = json.load(response)
 
                   candidates = result.get("candidates", [])
@@ -208,7 +196,6 @@ jobs:
                   if not generated_text:
                       return None
 
-                  # Clean accidental formatting.
                   generated_text = generated_text.replace(
                       "\n",
                       " "
@@ -237,7 +224,7 @@ jobs:
                   return None
 
           # ---------------------------------------------------------
-          # Escape text before placing it into HTML
+          # HTML escaping
           # ---------------------------------------------------------
 
           def escape_html(value):
@@ -247,28 +234,92 @@ jobs:
               )
 
           # ---------------------------------------------------------
-          # Generate one project card
+          # Project icon
+          # ---------------------------------------------------------
+
+          def project_icon(repo):
+
+              name = repo["name"].lower()
+
+              icon_map = {
+                  "campus-copilot-ai": "🎓",
+                  "ai-tic-tac-toe": "🎮",
+                  "holidays": "🌍",
+                  "python-practice": "🐍",
+                  "cpp-learning": "⚡"
+              }
+
+              if name in icon_map:
+                  return icon_map[name]
+
+              language = (
+                  repo.get("language") or ""
+              ).lower()
+
+              language_icons = {
+                  "python": "🐍",
+                  "javascript": "🟨",
+                  "typescript": "🔷",
+                  "c++": "⚡",
+                  "java": "☕",
+                  "html": "🌐",
+                  "css": "🎨",
+                  "shell": "💻",
+                  "php": "🐘",
+                  "ruby": "💎",
+                  "go": "🔵",
+                  "rust": "🦀"
+              }
+
+              return language_icons.get(
+                  language,
+                  "🚀"
+              )
+
+          # ---------------------------------------------------------
+          # Language badge
+          # ---------------------------------------------------------
+
+          def language_badge(language):
+
+              if not language:
+                  return ""
+
+              safe_language = urllib.parse.quote(
+                  language,
+                  safe=""
+              )
+
+              badge_url = (
+                  "https://img.shields.io/badge/"
+                  f"Language-{safe_language}-2563EB"
+                  "?style=flat-square"
+              )
+
+              return (
+                  f'<img src="{badge_url}" '
+                  f'alt="{escape_html(language)}"/>'
+              )
+
+          # ---------------------------------------------------------
+          # Create project card
           # ---------------------------------------------------------
 
           def create_project_card(repo):
+
               name = repo["name"]
               url = repo["html_url"]
 
               description = repo.get("description")
               language = repo.get("language")
 
-              # -----------------------------------------------------
-              # Existing GitHub description
-              # -----------------------------------------------------
-
+              # Existing GitHub description wins.
               if description and description.strip():
+
                   final_description = description.strip()
 
-              # -----------------------------------------------------
-              # Missing description → README → Gemini
-              # -----------------------------------------------------
-
               else:
+
                   readme_content = get_readme(name)
 
                   ai_description = generate_ai_description(
@@ -278,37 +329,27 @@ jobs:
 
                   if ai_description:
                       final_description = ai_description
+
                   else:
                       final_description = (
                           "Software project by Shehroz Sultani."
                       )
 
               safe_name = escape_html(name)
-              safe_description = escape_html(final_description)
+              safe_description = escape_html(
+                  final_description
+              )
               safe_url = escape_html(url)
 
-              # -----------------------------------------------------
-              # Language label
-              # -----------------------------------------------------
-
-              if language:
-                  safe_language = escape_html(language)
-
-                  language_html = (
-                      f'<code>⚙️ {safe_language}</code>'
-                  )
-              else:
-                  language_html = ""
-
-              # -----------------------------------------------------
-              # Project card
-              # -----------------------------------------------------
+              icon = project_icon(repo)
+              badge = language_badge(language)
 
               card = f"""
           <td width="50%" valign="top">
 
           <h3>
-            🚀 <a href="{safe_url}">{safe_name}</a>
+            {icon}&nbsp;
+            <a href="{safe_url}">{safe_name}</a>
           </h3>
 
           <p>
@@ -316,9 +357,13 @@ jobs:
           </p>
 
           <p>
-            {language_html}
-            &nbsp;
-            <a href="{safe_url}"><strong>View Project →</strong></a>
+            {badge}
+          </p>
+
+          <p>
+            <a href="{safe_url}">
+              <strong>View Project →</strong>
+            </a>
           </p>
 
           </td>
@@ -327,13 +372,14 @@ jobs:
               return card
 
           # ---------------------------------------------------------
-          # 1. Retrieve repositories
+          # 1. Retrieve all repositories
           # ---------------------------------------------------------
 
           repos = []
           page = 1
 
           while True:
+
               url = (
                   f"https://api.github.com/users/{username}/repos"
                   f"?type=owner&sort=updated&direction=desc"
@@ -341,9 +387,11 @@ jobs:
               )
 
               try:
+
                   data = github_get(url)
 
               except Exception as error:
+
                   raise SystemExit(
                       f"Failed to retrieve repositories: {error}"
                   )
@@ -365,9 +413,24 @@ jobs:
           repos = [
               repo
               for repo in repos
-              if repo["name"].lower() != username.lower()
-              and not repo.get("archived", False)
-              and not repo.get("private", False)
+
+              if repo["name"].lower()
+              != username.lower()
+
+              and not repo.get(
+                  "archived",
+                  False
+              )
+
+              and not repo.get(
+                  "private",
+                  False
+              )
+
+              and not repo.get(
+                  "fork",
+                  False
+              )
           ]
 
           # ---------------------------------------------------------
@@ -377,50 +440,105 @@ jobs:
           cards = []
 
           for repo in repos:
+
               try:
-                  card = create_project_card(repo)
-                  cards.append(card)
+
+                  cards.append(
+                      create_project_card(repo)
+                  )
 
               except Exception:
-                  # One bad repository should not stop the entire
-                  # profile update.
+
                   print(
                       f"Failed to generate card for "
-                      f"{repo.get('name', 'unknown')}; skipping."
+                      f"{repo.get('name', 'unknown')}; "
+                      f"using fallback."
+                  )
+
+                  safe_name = escape_html(
+                      repo.get(
+                          "name",
+                          "project"
+                      )
+                  )
+
+                  safe_url = escape_html(
+                      repo.get(
+                          "html_url",
+                          "#"
+                      )
+                  )
+
+                  cards.append(
+                      f"""
+          <td width="50%" valign="top">
+
+          <h3>
+            🚀 <a href="{safe_url}">
+              {safe_name}
+            </a>
+          </h3>
+
+          <p>
+            Software project by Shehroz Sultani.
+          </p>
+
+          <p>
+            <a href="{safe_url}">
+              <strong>View Project →</strong>
+            </a>
+          </p>
+
+          </td>
+          """
                   )
 
           # ---------------------------------------------------------
-          # 4. Build responsive-ish two-column HTML table
+          # 4. Build two-column grid
           # ---------------------------------------------------------
 
           rows = []
 
-          for index in range(0, len(cards), 2):
+          for index in range(
+              0,
+              len(cards),
+              2
+          ):
+
               first_card = cards[index]
 
               if index + 1 < len(cards):
-                  second_card = cards[index + 1]
+
+                  second_card = cards[
+                      index + 1
+                  ]
+
               else:
+
                   second_card = (
-                      '<td width="50%" valign="top"></td>'
+                      '<td width="50%" '
+                      'valign="top"></td>'
                   )
 
-              row = f"""
+              rows.append(
+                  f"""
           <tr>
           {first_card}
           {second_card}
           </tr>
           """
-
-              rows.append(row)
+              )
 
           if rows:
-              generated = """
-          <table>
-          """ + "\n".join(rows) + """
-          </table>
-          """
+
+              generated = (
+                  "<table>\n"
+                  + "\n".join(rows)
+                  + "\n</table>"
+              )
+
           else:
+
               generated = """
           <p align="center">
             <em>No public projects yet.</em>
@@ -438,33 +556,55 @@ jobs:
               "r",
               encoding="utf-8"
           ) as f:
+
               content = f.read()
 
-          start_marker = "<!-- PROJECTS:START -->"
-          end_marker = "<!-- PROJECTS:END -->"
+          start_marker = (
+              "<!-- PROJECTS:START -->"
+          )
 
-          start = content.find(start_marker)
-          end = content.find(end_marker)
+          end_marker = (
+              "<!-- PROJECTS:END -->"
+          )
+
+          start = content.find(
+              start_marker
+          )
+
+          end = content.find(
+              end_marker
+          )
 
           # ---------------------------------------------------------
           # Safety check
           # ---------------------------------------------------------
 
-          if start == -1 or end == -1 or end < start:
+          if (
+              start == -1
+              or end == -1
+              or end < start
+          ):
+
               raise SystemExit(
-                  "PROJECTS markers were not found in README.md. "
-                  "README was NOT modified."
+                  "PROJECTS markers were not found "
+                  "in README.md. README was NOT modified."
               )
 
           # ---------------------------------------------------------
-          # 6. Replace ONLY content between markers
+          # 6. Replace ONLY project section
           # ---------------------------------------------------------
 
           new_content = (
-              content[:start + len(start_marker)]
+              content[
+                  :start + len(start_marker)
+              ]
+
               + "\n\n"
+
               + generated
+
               + "\n\n"
+
               + content[end:]
           )
 
@@ -477,11 +617,15 @@ jobs:
               "w",
               encoding="utf-8"
           ) as f:
-              f.write(new_content)
+
+              f.write(
+                  new_content
+              )
 
           print(
-              f"Profile Projects section updated successfully "
-              f"with {len(cards)} project cards."
+              "Profile Projects section "
+              f"updated successfully with "
+              f"{len(cards)} project cards."
           )
 
           PY
