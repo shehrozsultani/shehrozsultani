@@ -79,6 +79,113 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 <!-- PROJECTS:START -->
 
+<table>
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🐍&nbsp;
+  <a href="https://github.com/shehrozsultani/python-practice">python-practice</a>
+</h3>
+
+<p>
+  This repository serves as a dedicated workspace for Python programming practice and general code development.
+</p>
+
+<p>
+  
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/python-practice">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  🎓&nbsp;
+  <a href="https://github.com/shehrozsultani/campus-copilot-ai">campus-copilot-ai</a>
+</h3>
+
+<p>
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it streamlines student productivity by combining course module management, assignment task tracking, and context-aware assistance for programming guidance, concept explanations, and debugging within a single interface.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-2563EB?style=flat-square" alt="JavaScript"/>
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/campus-copilot-ai">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🎮&nbsp;
+  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">ai-tic-tac-toe</a>
+</h3>
+
+<p>
+  Neon AI Tic-Tac-Toe is a responsive, arcade-style web application built with Python and Streamlit. It features a cyberpunk neon theme, dynamic opponent personalities with varying commentary styles, secure runtime API key configuration, and an offline backup move system.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Language-Python-2563EB?style=flat-square" alt="Python"/>
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  ⚡&nbsp;
+  <a href="https://github.com/shehrozsultani/cpp-learning">cpp-learning</a>
+</h3>
+
+<p>
+  My C++ learning journey with practice programs and projects
+</p>
+
+<p>
+  
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/cpp-learning">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
 <!-- PROJECTS:END -->
 
 <br>
