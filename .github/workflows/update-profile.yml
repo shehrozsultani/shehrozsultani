@@ -23,10 +23,10 @@ jobs:
         run: |
           python <<'PY'
           import base64
+          import html
           import json
           import os
           import re
-          import urllib.error
           import urllib.request
 
           username = "shehrozsultani"
@@ -41,22 +41,33 @@ jobs:
 
           gemini_api_key = os.environ.get("GEMINI_API_KEY")
 
+          # ---------------------------------------------------------
+          # GitHub API helper
+          # ---------------------------------------------------------
+
           def github_get(url):
               request = urllib.request.Request(
                   url,
                   headers=github_headers
               )
 
-              with urllib.request.urlopen(request, timeout=30) as response:
+              with urllib.request.urlopen(
+                  request,
+                  timeout=30
+              ) as response:
                   return json.load(response)
+
+          # ---------------------------------------------------------
+          # Retrieve repository README
+          # ---------------------------------------------------------
 
           def get_readme(repo_name):
               """
               Retrieve and decode a repository README.
 
-              Returns an empty string if the README is missing,
-              empty, invalid, or cannot be retrieved.
+              Returns an empty string if the README cannot be retrieved.
               """
+
               url = (
                   f"https://api.github.com/repos/"
                   f"{username}/{repo_name}/readme"
@@ -74,34 +85,44 @@ jobs:
                   if encoding == "base64":
                       decoded = base64.b64decode(
                           content.replace("\n", "")
-                      ).decode("utf-8", errors="replace")
+                      ).decode(
+                          "utf-8",
+                          errors="replace"
+                      )
                   else:
                       decoded = content
 
                   return decoded.strip()
 
-              except Exception as error:
+              except Exception:
                   print(
                       f"README unavailable for {repo_name}; "
                       f"using fallback description."
                   )
                   return ""
 
+          # ---------------------------------------------------------
+          # Generate Gemini description
+          # ---------------------------------------------------------
+
           def generate_ai_description(repo_name, readme_content):
               """
-              Generate a concise portfolio description using Gemini.
+              Generate a professional project description using Gemini.
 
-              Returns None if Gemini cannot generate a usable result.
+              The description can be reasonably detailed.
+              It is based only on the repository README.
               """
+
               if not gemini_api_key or not readme_content:
                   return None
 
-              # Prevent unnecessarily large prompts.
+              # Prevent unnecessarily huge requests.
               max_readme_chars = 12000
               readme_excerpt = readme_content[:max_readme_chars]
 
               prompt = f"""
-          You are writing a short professional description for a GitHub portfolio.
+          You are writing a professional project description for a developer
+          portfolio.
 
           Repository name:
           {repo_name}
@@ -112,18 +133,26 @@ jobs:
           ---END README---
 
           Task:
-          Based ONLY on the information contained in the README, write one
-          concise description of what this project actually does.
+          Understand what this project actually does and write a polished,
+          accurate portfolio description.
 
-          Rules:
-          - 10 to 20 words when reasonably possible.
-          - Be factual and professional.
-          - Do not invent features.
-          - Do not mention AI or Gemini.
-          - Do not use emojis.
-          - Do not use Markdown.
-          - Do not use quotation marks.
-          - Return ONLY the description.
+          Requirements:
+          - Base the description ONLY on the README information provided.
+          - Do not invent features, technologies, functionality, users, or
+            capabilities that are not supported by the README.
+          - Explain the project's actual purpose clearly.
+          - A reasonably detailed description is preferred.
+          - Usually use around 20–45 words when the README provides enough
+            information.
+          - It is acceptable to be shorter when the project is simple.
+          - Do not make the description unnecessarily long.
+          - Professional developer-portfolio tone.
+          - No emojis.
+          - No Markdown.
+          - No bullet points.
+          - No quotation marks.
+          - Do not mention Gemini, AI generation, or this prompt.
+          - Return ONLY the description text.
           """
 
               payload = {
@@ -179,15 +208,10 @@ jobs:
                   if not generated_text:
                       return None
 
-                  # Clean accidental formatting even if Gemini ignores
-                  # the output rules.
+                  # Clean accidental formatting.
                   generated_text = generated_text.replace(
                       "\n",
                       " "
-                  ).strip()
-
-                  generated_text = generated_text.strip(
-                      "\"'`"
                   )
 
                   generated_text = re.sub(
@@ -196,13 +220,12 @@ jobs:
                       generated_text
                   ).strip()
 
-                  # Prevent the generated text from becoming huge.
-                  if len(generated_text) > 250:
-                      generated_text = (
-                          generated_text[:250]
-                          .rsplit(" ", 1)[0]
-                          + "..."
-                      )
+                  generated_text = generated_text.strip(
+                      "\"'`"
+                  )
+
+                  if not generated_text:
+                      return None
 
                   return generated_text
 
@@ -214,57 +237,23 @@ jobs:
                   return None
 
           # ---------------------------------------------------------
-          # 1. Retrieve repositories
+          # Escape text before placing it into HTML
           # ---------------------------------------------------------
 
-          repos = []
-          page = 1
-
-          while True:
-              url = (
-                  f"https://api.github.com/users/{username}/repos"
-                  f"?type=owner&sort=updated&direction=desc"
-                  f"&per_page=100&page={page}"
+          def escape_html(value):
+              return html.escape(
+                  str(value),
+                  quote=True
               )
 
-              try:
-                  data = github_get(url)
-              except Exception as error:
-                  raise SystemExit(
-                      f"Failed to retrieve repositories: {error}"
-                  )
-
-              if not data:
-                  break
-
-              repos.extend(data)
-
-              if len(data) < 100:
-                  break
-
-              page += 1
-
           # ---------------------------------------------------------
-          # 2. Keep only suitable repositories
+          # Generate one project card
           # ---------------------------------------------------------
 
-          repos = [
-              repo
-              for repo in repos
-              if repo["name"].lower() != username.lower()
-              and not repo["archived"]
-              and not repo["private"]
-          ]
-
-          # ---------------------------------------------------------
-          # 3. Generate project entries
-          # ---------------------------------------------------------
-
-          projects = []
-
-          for repo in repos:
+          def create_project_card(repo):
               name = repo["name"]
               url = repo["html_url"]
+
               description = repo.get("description")
               language = repo.get("language")
 
@@ -276,7 +265,7 @@ jobs:
                   final_description = description.strip()
 
               # -----------------------------------------------------
-              # Missing GitHub description → README → Gemini
+              # Missing description → README → Gemini
               # -----------------------------------------------------
 
               else:
@@ -294,30 +283,161 @@ jobs:
                           "Software project by Shehroz Sultani."
                       )
 
-              line = (
-                  f"- **[{name}]({url})** — "
-                  f"{final_description}"
-              )
+              safe_name = escape_html(name)
+              safe_description = escape_html(final_description)
+              safe_url = escape_html(url)
+
+              # -----------------------------------------------------
+              # Language label
+              # -----------------------------------------------------
 
               if language:
-                  line += f" `[{language}]`"
+                  safe_language = escape_html(language)
 
-              projects.append(line)
+                  language_html = (
+                      f'<code>⚙️ {safe_language}</code>'
+                  )
+              else:
+                  language_html = ""
+
+              # -----------------------------------------------------
+              # Project card
+              # -----------------------------------------------------
+
+              card = f"""
+          <td width="50%" valign="top">
+
+          <h3>
+            🚀 <a href="{safe_url}">{safe_name}</a>
+          </h3>
+
+          <p>
+            {safe_description}
+          </p>
+
+          <p>
+            {language_html}
+            &nbsp;
+            <a href="{safe_url}"><strong>View Project →</strong></a>
+          </p>
+
+          </td>
+          """
+
+              return card
 
           # ---------------------------------------------------------
-          # 4. Build generated section
+          # 1. Retrieve repositories
           # ---------------------------------------------------------
 
-          if projects:
-              generated = "\n".join(projects)
+          repos = []
+          page = 1
+
+          while True:
+              url = (
+                  f"https://api.github.com/users/{username}/repos"
+                  f"?type=owner&sort=updated&direction=desc"
+                  f"&per_page=100&page={page}"
+              )
+
+              try:
+                  data = github_get(url)
+
+              except Exception as error:
+                  raise SystemExit(
+                      f"Failed to retrieve repositories: {error}"
+                  )
+
+              if not data:
+                  break
+
+              repos.extend(data)
+
+              if len(data) < 100:
+                  break
+
+              page += 1
+
+          # ---------------------------------------------------------
+          # 2. Filter repositories
+          # ---------------------------------------------------------
+
+          repos = [
+              repo
+              for repo in repos
+              if repo["name"].lower() != username.lower()
+              and not repo.get("archived", False)
+              and not repo.get("private", False)
+          ]
+
+          # ---------------------------------------------------------
+          # 3. Generate project cards
+          # ---------------------------------------------------------
+
+          cards = []
+
+          for repo in repos:
+              try:
+                  card = create_project_card(repo)
+                  cards.append(card)
+
+              except Exception:
+                  # One bad repository should not stop the entire
+                  # profile update.
+                  print(
+                      f"Failed to generate card for "
+                      f"{repo.get('name', 'unknown')}; skipping."
+                  )
+
+          # ---------------------------------------------------------
+          # 4. Build responsive-ish two-column HTML table
+          # ---------------------------------------------------------
+
+          rows = []
+
+          for index in range(0, len(cards), 2):
+              first_card = cards[index]
+
+              if index + 1 < len(cards):
+                  second_card = cards[index + 1]
+              else:
+                  second_card = (
+                      '<td width="50%" valign="top"></td>'
+                  )
+
+              row = f"""
+          <tr>
+          {first_card}
+          {second_card}
+          </tr>
+          """
+
+              rows.append(row)
+
+          if rows:
+              generated = """
+          <table>
+          """ + "\n".join(rows) + """
+          </table>
+          """
           else:
-              generated = "_No public projects yet._"
+              generated = """
+          <p align="center">
+            <em>No public projects yet.</em>
+          </p>
+          """
+
+          generated = generated.strip()
 
           # ---------------------------------------------------------
-          # 5. Read existing profile README
+          # 5. Read profile README
           # ---------------------------------------------------------
 
-          with open(readme, "r", encoding="utf-8") as f:
+          with open(
+              readme,
+              "r",
+              encoding="utf-8"
+          ) as f:
               content = f.read()
 
           start_marker = "<!-- PROJECTS:START -->"
@@ -326,31 +446,44 @@ jobs:
           start = content.find(start_marker)
           end = content.find(end_marker)
 
+          # ---------------------------------------------------------
+          # Safety check
+          # ---------------------------------------------------------
+
           if start == -1 or end == -1 or end < start:
               raise SystemExit(
-                  "PROJECTS markers were not found in README.md"
+                  "PROJECTS markers were not found in README.md. "
+                  "README was NOT modified."
               )
 
           # ---------------------------------------------------------
-          # 6. Replace ONLY the content between the markers
+          # 6. Replace ONLY content between markers
           # ---------------------------------------------------------
 
           new_content = (
               content[:start + len(start_marker)]
-              + "\n"
+              + "\n\n"
               + generated
-              + "\n"
+              + "\n\n"
               + content[end:]
           )
 
           # ---------------------------------------------------------
-          # 7. Write updated README
+          # 7. Write README
           # ---------------------------------------------------------
 
-          with open(readme, "w", encoding="utf-8") as f:
+          with open(
+              readme,
+              "w",
+              encoding="utf-8"
+          ) as f:
               f.write(new_content)
 
-          print("Profile Projects section updated successfully.")
+          print(
+              f"Profile Projects section updated successfully "
+              f"with {len(cards)} project cards."
+          )
+
           PY
 
       - name: Commit changes
