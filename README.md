@@ -86,82 +86,6 @@ I enjoy learning by building real projects, experimenting with modern technologi
 <td width="50%" valign="top">
 
 <h3>
-  🐍&nbsp;
-  <a href="https://github.com/shehrozsultani/python-practice">python-practice</a>
-</h3>
-
-<p>
-  A repository containing Python practice code and exercises.
-</p>
-
-<p>
-  
-</p>
-
-<p>
-  <a href="https://github.com/shehrozsultani/python-practice">
-    <strong>View Project →</strong>
-  </a>
-</p>
-
-</td>
-
-
-<td width="50%" valign="top">
-
-<h3>
-  🎓&nbsp;
-  <a href="https://github.com/shehrozsultani/campus-copilot-ai">campus-copilot-ai</a>
-</h3>
-
-<p>
-  CampusCopilot AI is an academic workspace for IT students that consolidates course module management, task tracking, and context-aware study assistance into a single platform. Built with Next.js and Tailwind CSS, it helps students organize coursework, track assignment deadlines, and debug code efficiently.
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/Language-JavaScript-2563EB?style=flat-square" alt="JavaScript"/>
-</p>
-
-<p>
-  <a href="https://github.com/shehrozsultani/campus-copilot-ai">
-    <strong>View Project →</strong>
-  </a>
-</p>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>
-  🎮&nbsp;
-  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">ai-tic-tac-toe</a>
-</h3>
-
-<p>
-  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe game features a dark cyberpunk UI with a responsive layout. The application includes customizable opponent commentary personalities, secure runtime API key handling, and an automated random-move fallback mechanism for offline play.
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/Language-Python-2563EB?style=flat-square" alt="Python"/>
-</p>
-
-<p>
-  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">
-    <strong>View Project →</strong>
-  </a>
-</p>
-
-</td>
-
-
-<td width="50%" valign="top">
-
-<h3>
   ⚡&nbsp;
   <a href="https://github.com/shehrozsultani/cpp-learning">cpp-learning</a>
 </h3>
@@ -176,6 +100,82 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 <p>
   <a href="https://github.com/shehrozsultani/cpp-learning">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  🐍&nbsp;
+  <a href="https://github.com/shehrozsultani/python-practice">python-practice</a>
+</h3>
+
+<p>
+  This repository serves as a dedicated workspace for practicing Python programming concepts and code exercises.
+</p>
+
+<p>
+  
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/python-practice">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+  🎓&nbsp;
+  <a href="https://github.com/shehrozsultani/campus-copilot-ai">campus-copilot-ai</a>
+</h3>
+
+<p>
+  Software project by Shehroz Sultani.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Language-JavaScript-2563EB?style=flat-square" alt="JavaScript"/>
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/campus-copilot-ai">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+  🎮&nbsp;
+  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">ai-tic-tac-toe</a>
+</h3>
+
+<p>
+  Software project by Shehroz Sultani.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Language-Python-2563EB?style=flat-square" alt="Python"/>
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/ai-tic-tac-toe">
     <strong>View Project →</strong>
   </a>
 </p>
