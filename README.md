@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace for university IT students, built using Next.js and Tailwind CSS. The application integrates course module management, task tracking, and subject-specific artificial intelligence assistance to help students understand technical concepts, debug code, and manage assignment deadlines.
+  CampusCopilot AI is a centralized academic workspace built with Next.js, React, and Tailwind CSS for university IT students. It combines course module management, task tracking, and subject-specific technical assistance to help students organize semester workloads, understand programming concepts, and debug code.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This Streamlit web application is a cyberpunk-themed Tic-Tac-Toe game built with Python. It features dynamic personalities with customized commentary styles, secure runtime API key handling, custom CSS grid styling, and an offline random-move fallback mode for uninterrupted gameplay.
+  This project is a cyberpunk-themed, responsive Tic-Tac-Toe web application built with Python and Streamlit. It features customizable opponent commentary personalities, a glowing dark-mode UI, secure API key configuration, and an automated offline fallback system for uninterrupted gameplay.
 </p>
 
 <p>
