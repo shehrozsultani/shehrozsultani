@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository serves as a personal workspace dedicated to practicing Python programming.
+  A dedicated repository for Python programming practice and code exercises.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a Next.js application that provides university IT students with a unified academic workspace. It combines context-aware academic assistance, semester course module management, and task tracking to help students debug code, understand technical concepts, and manage assignment deadlines.
+  CampusCopilot AI is a centralized academic workspace built with Next.js and Tailwind CSS for university IT students. It combines course module management, task tracking, and context-aware technical assistance to help students organize semester workloads, learn concepts, and debug code.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Built with Python and Streamlit, this web application is a cyberpunk-themed Tic-Tac-Toe game featuring dynamic opponent personalities, custom glowing UI styling, secure runtime API key management, and an automated offline fallback mode for uninterrupted gameplay.
+  Neon AI Tic-Tac-Toe is a cyberpunk, arcade-style game built with Python and Streamlit. It features customizable AI personalities with distinct commentary styles, a dark glowing interface, secure API key management, and an offline random-move fallback mechanism.
 </p>
 
 <p>
