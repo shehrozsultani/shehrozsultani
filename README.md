@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A dedicated repository designed for practicing Python programming concepts and working through coding exercises.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. It integrates course module management, assignment tracking, and context-aware technical assistance into a single platform, helping students streamline study workflows and solve programming problems efficiently.
 </p>
 
 <p>
