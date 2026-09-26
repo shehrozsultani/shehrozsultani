@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This repository is dedicated to Python programming practice and code experimentation.
 </p>
 
 <p>
