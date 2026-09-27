@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository is dedicated to Python programming practice and code experimentation.
+  This repository serves as a dedicated space for Python programming practice.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js, React, and Tailwind CSS, it combines context-aware academic assistance, course module management, and task tracking to streamline study workflows within a single platform.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  Neon AI Tic-Tac-Toe is a cyberpunk-themed arcade game built with Python and Streamlit. It connects to the Google AI Studio SDK for strategic gameplay with selectable opponent personalities, featuring a responsive dark-themed grid layout and an automated offline fallback mode.
 </p>
 
 <p>
