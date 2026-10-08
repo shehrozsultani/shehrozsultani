@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository contains Python practice code.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Built with Python and Streamlit, this futuristic, arcade-style Tic-Tac-Toe application features a responsive cyberpunk interface, customizable opponent personalities with unique commentary, secure API key handling, and an offline backup mode for uninterrupted gameplay.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
