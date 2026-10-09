@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This repository is a dedicated workspace for Python practice, serving as a collection point for Python code and programming exercises.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace for university IT students. It integrates course module management, task deadline tracking, and context-aware academic assistance to help students organize semester workloads, review programming code, and debug technical concepts in one platform.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe web application features a cyberpunk neon interface, customizable opponent personalities with unique commentary, secure API key authentication, and an automated offline fallback system for seamless gameplay across mobile and desktop devices.
 </p>
 
 <p>
