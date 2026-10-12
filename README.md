@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository serves as a dedicated space for Python programming practice.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it streamlines study workflows by combining course module management, assignment task tracking, and context-aware programming and academic assistance into a single interface.
+  CampusCopilot AI is a centralized academic workspace built with Next.js and React that helps university IT students manage course modules, track task deadlines, and receive context-aware programming guidance and study support tailored to specific subjects.
 </p>
 
 <p>
