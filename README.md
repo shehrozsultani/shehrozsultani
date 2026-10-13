@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace built with Next.js and React that helps university IT students manage course modules, track task deadlines, and receive context-aware programming guidance and study support tailored to specific subjects.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
