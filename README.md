@@ -115,7 +115,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository serves as a dedicated workspace for Python programming practice.
+  This repository serves as a dedicated space for Python programming practice and code implementation.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace for university IT students that combines course module management, assignment task tracking, and subject-specific programming assistance. It enables students to organize semester workloads, debug code, and understand complex technical concepts from a single interface.
+  CampusCopilot AI is a centralized academic workspace for university IT students that combines course module management, task tracking, and context-aware study assistance to help students learn technical concepts, debug code, and manage semester workloads in one platform.
 </p>
 
 <p>
