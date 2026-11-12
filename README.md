@@ -86,6 +86,30 @@ I enjoy learning by building real projects, experimenting with modern technologi
 <td width="50%" valign="top">
 
 <h3>
+  🐍&nbsp;
+  <a href="https://github.com/shehrozsultani/ParcelRoute">ParcelRoute</a>
+</h3>
+
+<p>
+  ParcelRoute is a Flask and MySQL web application designed for logistics and last-mile parcel tracking. It securely reads from an existing logistics database using parameterized SQL queries, featuring input-validated tracking functionality, sensitive data masking, automated test coverage, and graceful error handling.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Language-Python-2563EB?style=flat-square" alt="Python"/>
+</p>
+
+<p>
+  <a href="https://github.com/shehrozsultani/ParcelRoute">
+    <strong>View Project →</strong>
+  </a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
   ⚡&nbsp;
   <a href="https://github.com/shehrozsultani/cpp-learning">cpp-learning</a>
 </h3>
@@ -106,6 +130,10 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -115,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A dedicated repository focused on practicing Python programming concepts and developing core language skills.
+  This repository is dedicated to Python programming practice.
 </p>
 
 <p>
@@ -130,10 +158,6 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -143,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace for university IT students that integrates subject-specific study assistance, course module management, and task tracking into a single interface to streamline academic workflows and improve student productivity.
+  CampusCopilot AI is a centralized academic workspace built with Next.js and Tailwind CSS for university IT students. It combines dynamic course module management, assignment tracking, and context-aware technical assistance into a single platform to streamline daily study workflows.
 </p>
 
 <p>
@@ -158,6 +182,10 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -182,6 +210,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 
 </td>
 
+<td width="50%" valign="top"></td>
 </tr>
 
 </table>
