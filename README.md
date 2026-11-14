@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  ParcelRoute is a Flask and MySQL web application for logistics and last-mile parcel routing. It currently provides secure, read-only parcel tracking featuring tracking number validation, phone number masking, automated unit tests, and parameterized database queries.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This repository serves as a dedicated space for Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace built with Next.js for university IT students. It combines subject-specific academic support, course module management, and task tracking into a single platform, helping students explain technical concepts, debug code, and manage study workloads.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  A web-based, arcade-style Tic-Tac-Toe application built using Python and Streamlit with a responsive cyberpunk neon interface. It features customizable opponent commentary personalities, secure runtime API key management, and an automated offline fallback mechanism to ensure continuous gameplay.
 </p>
 
 <p>
