@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application designed for logistics and last-mile parcel routing. It provides secure parcel tracking against an existing database, featuring parameterized SQL queries, input validation, receiver phone masking, and automated unit testing.
+  ParcelRoute is a Flask and MySQL web application designed for last-mile parcel tracking. Built with a service-layer architecture using PyMySQL, it securely queries live database records featuring input validation, sensitive data masking, friendly error handling, and automated unit testing.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace built with Next.js and Tailwind CSS for IT students. It combines course module management, task tracking, and context-aware academic assistance to help students understand technical concepts, debug code, and manage assignment deadlines within a single platform.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built using Next.js and Tailwind CSS, it integrates course module management, task tracking, and context-aware study assistance to streamline semester workflows, code debugging, and technical concept learning.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Neon AI Tic-Tac-Toe is a responsive web application built with Python and Streamlit featuring a cyberpunk dark theme. The game offers selectable opponent personalities, dynamic commentary, secure runtime API key configuration, and an automated offline fallback system for seamless gameplay across devices.
+  Neon AI Tic-Tac-Toe is a responsive, arcade-style web application built with Python and Streamlit. It features a dark cyberpunk-themed interface, customizable opponent personalities with unique commentary styles, secure runtime API key configuration, and an offline fallback mode.
 </p>
 
 <p>
