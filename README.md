@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application built for logistics and last-mile parcel routing. It securely queries existing database records to enable parcel tracking using parameterized SQL, backed by a service-layer architecture and automated testing.
+  ParcelRoute is a Flask and MySQL web application built for logistics and last-mile parcel tracking. It securely reads from an existing database to query tracking information, validate user input, mask receiver phone numbers, and manage source data quality issues.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A repository dedicated to Python programming practice.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe game features a responsive cyberpunk-themed UI styled with custom CSS. It offers customizable opponent personalities with distinct commentary styles, secure runtime API key configuration, and an offline fallback mechanism using random moves.
 </p>
 
 <p>
