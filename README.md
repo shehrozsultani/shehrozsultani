@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application built for logistics and last-mile parcel tracking. It securely reads from an existing database to query tracking information, validate user input, mask receiver phone numbers, and manage source data quality issues.
+  ParcelRoute is a Flask and MySQL web application designed for last-mile parcel logistics. Currently a read-only service, it features secure parcel tracking utilizing parameterized SQL queries, input validation, and masked phone numbers, supported by automated unit tests for app logic.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This repository serves as a workspace dedicated to Python programming practice and code development.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it integrates course module management, task tracking, and context-aware academic assistance to help students organize workloads, debug code, and understand technical concepts.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe game features a responsive cyberpunk-themed UI styled with custom CSS. It offers customizable opponent personalities with distinct commentary styles, secure runtime API key configuration, and an offline fallback mechanism using random moves.
+  Neon AI Tic-Tac-Toe is a cyberpunk, arcade-style web game built using Python and Streamlit. The application features a dark-themed responsive layout, customizable opponent personalities, secure runtime API key management, and an offline fallback mechanism using random moves.
 </p>
 
 <p>
