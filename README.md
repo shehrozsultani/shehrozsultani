@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application designed for last-mile parcel logistics. Currently a read-only service, it features secure parcel tracking utilizing parameterized SQL queries, input validation, and masked phone numbers, supported by automated unit tests for app logic.
+  ParcelRoute is a Flask and MySQL web application for last-mile logistics and parcel tracking. It securely queries an existing database using parameterized SQL to display real-time tracking information, incorporating input validation, automated test coverage, and privacy masking.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository serves as a workspace dedicated to Python programming practice and code development.
+  A software repository dedicated to Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it integrates course module management, task tracking, and context-aware academic assistance to help students organize workloads, debug code, and understand technical concepts.
+  CampusCopilot AI is a centralized academic workspace built with Next.js and Tailwind CSS for university IT students. It combines course module management, task tracking, and context-aware academic assistance to help students organize semester workloads, debug programming issues, and master technical concepts.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Neon AI Tic-Tac-Toe is a cyberpunk, arcade-style web game built using Python and Streamlit. The application features a dark-themed responsive layout, customizable opponent personalities, secure runtime API key management, and an offline fallback mechanism using random moves.
+  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe game features a cyberpunk neon interface, customizable AI personalities, secure API key handling, and an automated offline backup mode to ensure uninterrupted gameplay.
 </p>
 
 <p>
