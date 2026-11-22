@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application for last-mile logistics and parcel tracking. It securely queries an existing database using parameterized SQL to display real-time tracking information, incorporating input validation, automated test coverage, and privacy masking.
+  ParcelRoute is a Flask and MySQL web application designed for last-mile logistics and parcel tracking. It securely queries an existing database to display real parcel data, featuring tracking number validation, phone number masking, and robust error handling.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A software repository dedicated to Python programming practice.
+  A repository dedicated to Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace built with Next.js and Tailwind CSS for university IT students. It combines course module management, task tracking, and context-aware academic assistance to help students organize semester workloads, debug programming issues, and master technical concepts.
+  CampusCopilot AI is a centralized academic workspace built for university IT students using Next.js and Tailwind CSS. The application combines context-aware technical assistance, course module organization, and task tracking into a single platform to streamline study workflows.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Built with Python and Streamlit, this arcade-style Tic-Tac-Toe game features a cyberpunk neon interface, customizable AI personalities, secure API key handling, and an automated offline backup mode to ensure uninterrupted gameplay.
+  A cyberpunk-themed Tic-Tac-Toe web application built with Python and Streamlit. It features interactive opponent personalities with dynamic commentary styles, custom neon UI styling, secure runtime API key handling, and an automated offline fallback mode for continuous gameplay.
 </p>
 
 <p>
