@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application designed for last-mile logistics and parcel tracking. It securely queries an existing database to display real parcel data, featuring tracking number validation, phone number masking, and robust error handling.
+  ParcelRoute is a Flask and MySQL web application for last-mile parcel tracking. Featuring a layered service architecture, it securely performs read-only database queries using parameterized SQL, regex input validation, masked receiver phone numbers, and automated test coverage.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A repository dedicated to Python programming practice.
+  This repository is dedicated to Python practice code.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace built for university IT students using Next.js and Tailwind CSS. The application combines context-aware technical assistance, course module organization, and task tracking into a single platform to streamline study workflows.
+  CampusCopilot AI is a centralized academic workspace for university IT students that combines subject-specific learning assistance, course module management, and task tracking into a single interface to streamline study workflows and technical problem-solving.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  A cyberpunk-themed Tic-Tac-Toe web application built with Python and Streamlit. It features interactive opponent personalities with dynamic commentary styles, custom neon UI styling, secure runtime API key handling, and an automated offline fallback mode for continuous gameplay.
+  Neon AI Tic-Tac-Toe is a responsive, cyberpunk-themed Tic-Tac-Toe web application built with Python and Streamlit. It features customizable opponent personalities, a dark arcade UI driven by custom CSS, secure runtime API key handling, and an automated offline backup mode for uninterrupted gameplay.
 </p>
 
 <p>
