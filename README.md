@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  ParcelRoute is a Flask and MySQL web application for last-mile parcel tracking. Featuring a layered service architecture, it securely performs read-only database queries using parameterized SQL, regex input validation, masked receiver phone numbers, and automated test coverage.
+  Software project by Shehroz Sultani.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository is dedicated to Python practice code.
+  This repository is dedicated to Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace for university IT students that combines subject-specific learning assistance, course module management, and task tracking into a single interface to streamline study workflows and technical problem-solving.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students to streamline their learning workflow. Built using Next.js and Tailwind CSS, the platform combines course module management, task tracking, and dynamic, context-aware technical assistance within a single interface.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Neon AI Tic-Tac-Toe is a responsive, cyberpunk-themed Tic-Tac-Toe web application built with Python and Streamlit. It features customizable opponent personalities, a dark arcade UI driven by custom CSS, secure runtime API key handling, and an automated offline backup mode for uninterrupted gameplay.
+  This web-based cyberpunk Tic-Tac-Toe game is built with Python and Streamlit, featuring a responsive neon-styled dark theme. It offers customizable opponent personalities with unique commentary styles, secure runtime API key configuration, and an automated offline backup mechanism for seamless gameplay.
 </p>
 
 <p>
