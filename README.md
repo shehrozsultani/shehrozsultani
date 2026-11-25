@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  ParcelRoute is a Flask and MySQL web application for last-mile parcel routing and logistics. It reads from an existing database to provide parcel tracking, featuring input validation, parameterized SQL queries, masked phone numbers, and automated testing.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace designed for university IT students to streamline their learning workflow. Built using Next.js and Tailwind CSS, the platform combines course module management, task tracking, and dynamic, context-aware technical assistance within a single interface.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built using Next.js, React, and Tailwind CSS, the platform combines course module management, task tracking, and context-aware academic assistance to help students organize workloads and resolve technical programming problems.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This web-based cyberpunk Tic-Tac-Toe game is built with Python and Streamlit, featuring a responsive neon-styled dark theme. It offers customizable opponent personalities with unique commentary styles, secure runtime API key configuration, and an automated offline backup mechanism for seamless gameplay.
+  Neon AI Tic-Tac-Toe is a futuristic, arcade-style web application built with Python and Streamlit. It features a responsive cyberpunk UI, customizable opponent personalities with unique commentary, secure API key management, and an offline backup mode that ensures uninterrupted gameplay.
 </p>
 
 <p>
