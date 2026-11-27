@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This repository is dedicated to Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it integrates context-aware technical learning assistance, course module organization, and academic task tracking into a single interface to streamline student workflows.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  This web-based Tic-Tac-Toe application is built with Python and Streamlit, featuring a dark cyberpunk-themed interface. It offers configurable opponent personalities with unique commentary styles, dynamic strategic move processing, secure runtime API key handling, and an automated offline fallback mode.
 </p>
 
 <p>
