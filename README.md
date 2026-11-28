@@ -91,7 +91,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  Software project by Shehroz Sultani.
+  ParcelRoute is a Flask and MySQL web application designed for last-mile parcel logistics. It securely reads from an existing database to deliver real-time parcel tracking, featuring input validation, parameterized SQL queries, masked recipient phone numbers, and automated test coverage.
 </p>
 
 <p>
@@ -143,7 +143,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This repository is dedicated to Python programming practice.
+  A dedicated repository designed for Python programming practice.
 </p>
 
 <p>
@@ -167,7 +167,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  CampusCopilot AI is a centralized academic workspace designed for university IT students. Built with Next.js and Tailwind CSS, it integrates context-aware technical learning assistance, course module organization, and academic task tracking into a single interface to streamline student workflows.
+  CampusCopilot AI is a centralized academic workspace for university IT students built using Next.js, React, and Tailwind CSS. It unifies context-aware study assistance, code debugging, course module organization, and assignment deadline tracking into a single platform.
 </p>
 
 <p>
@@ -195,7 +195,7 @@ I enjoy learning by building real projects, experimenting with modern technologi
 </h3>
 
 <p>
-  This web-based Tic-Tac-Toe application is built with Python and Streamlit, featuring a dark cyberpunk-themed interface. It offers configurable opponent personalities with unique commentary styles, dynamic strategic move processing, secure runtime API key handling, and an automated offline fallback mode.
+  A futuristic, cyberpunk-themed Tic-Tac-Toe web application built with Python and Streamlit. It features responsive custom neon CSS grid styling, selectable AI personalities for dynamic in-game commentary, secure runtime API key handling, and an automated offline move fallback system.
 </p>
 
 <p>
